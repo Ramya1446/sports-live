@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soccer Matches - Game Time Showcase</title>
+    <meta name="description" content="Upcoming soccer matches from top leagues">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Loading State (initially visible) -->
+        <div class="loading-container" id="loadingContainer">
+            <div class="loading-content">
+                <div class="loading-spinner"></div>
+                <p class="loading-text">Loading matches...</p>
+            </div>
+        </div>
+
+        <!-- Error State (initially hidden) -->
+        <div class="error-container" id="errorContainer" style="display: none;">
+            <div class="error-content">
+                <div class="error-icon">⚠️</div>
+                <p class="error-text" id="errorText">Failed to fetch matches</p>
+            </div>
+        </div>
+
+        <!-- Main Content (initially hidden) -->
+        <div class="main-container" id="mainContainer" style="display: none;">
+            <div class="content-wrapper">
+                <!-- Header -->
+                <div class="header-section">
+                    <div class="header-title-container">
+                        <div class="header-icon-wrapper">
+                            <svg class="header-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h1 class="header-title">Soccer Matches</h1>
+                    </div>
+                    <p class="header-subtitle">Upcoming fixtures from top leagues around the world</p>
+                    <div class="header-api-source">
+                        API Source: <a href="https://api.football-data.org" class="api-link">Football-Data.org</a>
+                    </div>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stats-card stats-card-purple">
+                        <div class="stats-card-content">
+                            <svg class="stats-icon stats-icon-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                            <h3 class="stats-number" id="matchesCount">0</h3>
+                            <p class="stats-label">Upcoming Matches</p>
+                        </div>
+                    </div>
+                    <div class="stats-card stats-card-blue">
+                        <div class="stats-card-content">
+                            <svg class="stats-icon stats-icon-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"/>
+                            </svg>
+                            <h3 class="stats-number" id="teamsCount">0</h3>
+                            <p class="stats-label">Teams Playing</p>
+                        </div>
+                    </div>
+                    <div class="stats-card stats-card-green">
+                        <div class="stats-card-content">
+                            <svg class="stats-icon stats-icon-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <h3 class="stats-number">5</h3>
+                            <p class="stats-label">Leagues</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Matches Grid -->
+                <div class="matches-grid" id="matchesGrid">
+                    <!-- Matches will be dynamically inserted here -->
+                </div>
+
+                <!-- Footer -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
